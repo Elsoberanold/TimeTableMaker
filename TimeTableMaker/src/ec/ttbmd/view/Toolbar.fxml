@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane styleClass="toolbar" stylesheets="@MaterialDesign.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.ttbmd.view.ToolbarController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="671.0" minWidth="10.0" prefWidth="666.0" />
+      <ColumnConstraints maxWidth="1295.0" minWidth="658.0" prefWidth="663.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="247.0" spacing="8.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleBurgerMenu" prefHeight="40.0" prefWidth="40.0" styleClass="burger-menu" />
+         </children>
+         <padding>
+            <Insets left="16.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="920.0" spacing="8.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="undo-button" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="redo-button" />
+            <MenuButton mnemonicParsing="false" popupSide="LEFT" prefHeight="40.0" prefWidth="40.0" styleClass="filter-menu">
+               <items>
+                  <CheckMenuItem mnemonicParsing="false" text="T" />
+                  <CheckMenuItem mnemonicParsing="false" text="TP" />
+                  <CheckMenuItem mnemonicParsing="false" text="P" />
+               </items>
+            </MenuButton>
+            <MenuButton layoutX="434.0" layoutY="18.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="40.0" prefWidth="40.0" styleClass="more-menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#exportCanvasAsPNG" text="Export PNG" />
+                  <MenuItem mnemonicParsing="false" onAction="#settings" text="Export settings" />
+                  <MenuItem mnemonicParsing="false" onAction="#sobre" text="About" />
+               </items>
+            </MenuButton>
+         </children>
+         <padding>
+            <Insets right="16.0" />
+         </padding>
+      </HBox>
+   </children>
+</GridPane>

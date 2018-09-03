@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@MaterialDesign.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.ttbmd.view.Overview_NDEController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="42.0" layoutY="40.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <ScrollPane hbarPolicy="NEVER" maxWidth="240.0" minWidth="240.0" prefHeight="200.0" prefWidth="240.0">
+               <content>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="240.0" prefWidth="240.0">
+                     <children>
+                        <Label layoutX="34.0" layoutY="280.0" styleClass="header" text="VIEW">
+                           <VBox.margin>
+                              <Insets left="24.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ToggleButton fx:id="tableModeBtn" mnemonicParsing="false" onAction="#TableMode" prefHeight="40.0" prefWidth="184.0" selected="true" styleClass="tview-toggle-button" text="Table">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="view" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="graphicModeBtn" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#GraphicMode" prefHeight="40.0" prefWidth="184.0" styleClass="gview-toggle-button" text="Graphic" toggleGroup="$view" />
+                        <Separator layoutX="10.0" layoutY="160.0" prefWidth="200.0" />
+                        <Label layoutX="34.0" layoutY="20.0" styleClass="header" text="FILE">
+                           <VBox.margin>
+                              <Insets left="24.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#handleOpen" prefHeight="40.0" prefWidth="240.0" styleClass="open-button" text="Open">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="240.0" styleClass="save-button" text="Save" />
+                        <HBox alignment="CENTER_LEFT" maxWidth="240.0" prefHeight="60.0" spacing="8.0">
+                           <children>
+                              <TextField fx:id="fileName" minWidth="0.0" prefHeight="34.0" prefWidth="160.0" promptText="Save timetable as">
+                                 <HBox.margin>
+                                    <Insets left="24.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#handleSaveAs" prefHeight="40.0" prefWidth="40.0" styleClass="new-button" text="+" />
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <AnchorPane SplitPane.resizableWithParent="true">
+               <children>
+                  <BorderPane fx:id="ContentDisplay" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleNewEvent" prefHeight="56.0" prefWidth="56.0" styleClass="add" text="+" AnchorPane.bottomAnchor="24.0" AnchorPane.rightAnchor="24.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
